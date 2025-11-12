@@ -1,0 +1,237 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FitVerse Gym — Equipment & Workouts</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">FitVerse Gym</h1>
+      <nav>
+        <a href="#equipment">Equipment</a>
+        <a href="#warmup">Warm-up</a>
+        <a href="#tips">Tips</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <h2>Symbolizes Strength With Rhythm And Dedication.</h2>
+          <p>Comprehensive guide to gym equipment usage, benefits, and safe weight limits — plus warm-up routines to
+            prevent injuries.</p>
+          <a class="btn" href="#equipment">Explore Equipment</a>
+        </div>
+        <img src="images/gym.jpg" alt="people working out in a modern gym" />
+      </div>
+    </section>
+
+    <section id="equipment" class="container section">
+      <h3>Gym Equipment & How to Use Them</h3>
+      <p class="lead">Click any equipment card to view full details including correct usage, benefits and suggested
+        weight limits.</p>
+
+      <div class="controls">
+        <input id="search" placeholder="Search equipment or benefit..." />
+        <select id="filter">
+          <option value="all">All</option>
+          <option value="cardio">Cardio</option>
+          <option value="strength">Strength</option>
+          <option value="functional">Functional</option>
+        </select>
+      </div>
+
+      <div id="cards" class="grid">
+        <!-- Template card structure: data attributes read by JS -->
+        <article class="card" data-type="cardio"
+          data-usage="Stand with feet shoulder-width. Hold handles and start walking or running in a controlled manner."
+          data-benefits="Improves cardiovascular endurance, burns calories, low impact option depending on intensity."
+          data-weightlimit="N/A" data-who="Beginner to advanced">
+          <img src="images/trademill.jpg" alt="Treadmill" />
+          <h4>Treadmill</h4>
+          <p class="muted">Cardio — Continuous running / walking</p>
+        </article>
+
+        <article class="card" data-type="strength"
+          data-usage="Adjust seat height. Place feet flat. Press the platform with heels and extend legs fully without locking knees."
+          data-benefits="Targets quadriceps, hamstrings and glutes; good for leg strength and hypertrophy."
+          data-weightlimit="Personalized: typically 20–200+ kg depending on machine and user experience"
+          data-who="Intermediate to advanced">
+          <img src="images/leg-press.jpg" alt="Leg Press" />
+          <h4>Leg Press</h4>
+          <p class="muted">Strength — Lower body</p>
+        </article>
+
+        <article class="card" data-type="strength"
+          data-usage="Grip bar slightly wider than shoulders, retract shoulder blades, lower to chest then press up explosively."
+          data-benefits="Chest, shoulders, triceps strength; compound movement for upper-body mass."
+          data-weightlimit="Beginner: 10–40 kg bar loads; Advanced: 40+ kg (progressive)"
+          data-who="Beginner to advanced">
+          <img src="images/bench press.jpg" alt="Bench Press" />
+          <h4>Bench Press</h4>
+          <p class="muted">Strength — Upper body compound</p>
+        </article>
+
+        <article class="card" data-type="strength"
+          data-usage="Stand upright, keep core tight, pull barbell up along your shins to mid-thigh, then lower with control."
+          data-benefits="Full posterior chain: hamstrings, glutes, lower back; builds total-body strength."
+          data-weightlimit="Technique first — stick to lighter weights until form is clean (20–200+ kg depending)"
+          data-who="Intermediate to advanced">
+          <img src="images/deadlift.jpg" alt="Deadlift" />
+          <h4>Deadlift</h4>
+          <p class="muted">Strength — Posterior chain</p>
+        </article>
+
+        <article class="card" data-type="functional"
+          data-usage="Stand tall, hold kettlebell with both hands (or single), hinge at hips and swing to shoulder height with controlled breathing."
+          data-benefits="Builds hip power, conditioning, grip strength, and posterior chain endurance."
+          data-weightlimit="Beginners: 4–12 kg; Intermediate: 12–24 kg; Advanced: 24+ kg"
+          data-who="Beginner to advanced">
+          <img src="images/Kettlebell Swing.jpg" alt="Kettlebell" />
+          <h4>Kettlebell Swing</h4>
+          <p class="muted">Functional — Power & conditioning</p>
+        </article>
+
+        <article class="card" data-type="strength"
+          data-usage="Adjust seat so handles are level with chest. Pull handles toward your torso squeezing shoulder blades together."
+          data-benefits="Back thickness and strength; improves posture and pulling power."
+          data-weightlimit="Light to heavy depending on experience; focus on scapular retraction"
+          data-who="Beginner to advanced">
+          <img src="images/Seated Row.webp" alt="Rowing Machine" />
+          <h4>Seated Row</h4>
+          <p class="muted">Strength — Mid-back</p>
+        </article>
+
+        <article class="card" data-type="cardio"
+          data-usage="Set resistance level and cycle at a steady cadence. Use for endurance, intervals or recovery sessions."
+          data-benefits="Low-impact cardio, leg endurance, and calorie burn." data-weightlimit="N/A"
+          data-who="Beginner to advanced">
+          <img src="images/stationary bike.jpg" alt="Stationary Bike" />
+          <h4>Stationary Bike</h4>
+          <p class="muted">Cardio — Low-impact</p>
+        </article>
+
+        <article class="card" data-type="strength"
+          data-usage="Position hands shoulder-width on bar, hinge forward slightly, pull bar to chest while squeezing shoulder blades."
+          data-benefits="Lat width and upper back strength; crucial for pull and rowing movements."
+          data-weightlimit="Assisted pull-down machine varies — use weight that allows 8–12 quality reps"
+          data-who="Beginner to advanced">
+          <img src="images/lat pulldown.jpeg" alt="Lat Pulldown" />
+          <h4>Lat Pulldown</h4>
+          <p class="muted">Strength — Lats & upper back</p>
+        </article>
+
+      </div>
+
+      <!-- Modal for showing details -->
+      <div id="modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+          <button id="modal-close" class="close">×</button>
+          <img id="modal-img" src="" alt="equipment image" />
+          <h4 id="modal-title"></h4>
+          <p id="modal-type" class="muted"></p>
+          <h5>How to use</h5>
+          <p id="modal-usage"></p>
+          <h5>Benefits</h5>
+          <p id="modal-benefits"></p>
+          <h5>Suggested weight limits</h5>
+          <p id="modal-weight"></p>
+          <h5>Who should use</h5>
+          <p id="modal-who"></p>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="warmup" class="container section warmup">
+      <h3>Warm-up & Mobility Routine (10–12 minutes)</h3>
+      <p class="lead">Do these before heavy lifting or intense cardio to prime muscles and reduce injury risk.</p>
+      <div class="warmup-grid">
+        <div class="warmup-card">
+          <img src="images/jumping jacks.jpg" alt="Jumping jacks" />
+          <h4>Jumping Jacks — 1 min</h4>
+          <p>Full-body dynamic movement to raise heart rate.</p>
+        </div>
+        <div class="warmup-card">
+          <img src="images/Leg Swings.webp" alt="Leg swings" />
+          <h4>Leg Swings — 10 each side</h4>
+          <p>Loosens hip flexors and hamstrings for lower-body work.</p>
+        </div>
+        <div class="warmup-card">
+          <img src="images/Arm Circles.avif" alt="Arm circles" />
+          <h4>Arm Circles — 30 sec each direction</h4>
+          <p>Mobilizes shoulders before pressing movements.</p>
+        </div>
+        <div class="warmup-card">
+          <img src="images/hip hinge.jpg" alt="Hip hinge" />
+          <h4>Hip Hinge / Deadbug — 8–10 reps</h4>
+          <p>Activates posterior chain and core stability.</p>
+        </div>
+      </div>
+
+
+
+      <div class="warmup-note">
+        <br>
+        <strong>Pro tip:</strong>
+        start with bodyweight versions and progress gradually. Always control range of motion.
+      </div>
+    </section>
+
+    <section id="tips" class="container section">
+      <h3>Safety Tips & Best Practices</h3>
+      <ul class="tips">
+        <li> Always warm up 8–12 minutes before every </li>
+
+        <li> Focus on proper form before increasing weight.</li>
+
+        <li> Start with light weights and progress gradually.</li>
+
+        <li> Use a spotter or safety equipment for heavy lifts.</li>
+
+        <li> Perform exercises with controlled, steady movements.</li>
+
+        <li> Stay hydrated throughout your workout.</li>
+
+        <li> Give each muscle group 48–72 hours to recover.</li>
+
+        <li> Breathe properly — exhale on effort, inhale on release.</li>
+
+        <li> Wear proper gym attire and supportive shoes.</li>
+
+        <li> Stop immediately if you feel pain or discomfort.</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="container section contact">
+      <h3>Contact & Membership</h3>
+      <p>Want to visit PeakForge Gym? Contact us for tours, personal training, and class schedules.</p>
+      <form id="contact-form">
+        <input type="text" placeholder="Your name" required />
+        <input type="email" placeholder="Email" required />
+        <textarea placeholder="Message (e.g., membership, PT inquiry)"></textarea>
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> FitVerse Gym · Built with care | ALL RIGHTS RESERVED 2025</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
